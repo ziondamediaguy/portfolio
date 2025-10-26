@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags --><title>Zion da'mediaguy | Creative Media Specialist in Nigeria</title>
+    <meta name="description" content="Zion da'mediaguy is a professional creative media specialist in Nigeria, offering expert graphic design, video production, photography, and livestream services to tell your story.">
+    <meta name="keywords" content="Creative Media Specialist in Nigeria, Professional Graphic Designer in Nigeria, Video Editor for Church and Brand Projects, Photography and Livestream Services, Visual Storytelling Expert for Global Clients, Zion da'mediaguy">
+    <meta name="author" content="Zion da'mediaguy">
+
+    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (for icons) --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles and Tailwind Configuration --><style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2d2d2d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #DAA520;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B8860B;
+        }
+
+        /* Basic setup */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111;
+            color: #F5F5F5;
+        }
+
+        /* Page transition animation */
+        .page-section {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Active Nav Link Style */
+        .nav-link.active {
+            color: #DAA520; /* brand-gold */
+            border-bottom-color: #DAA520;
+        }
+        .nav-link {
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #DAA520;
+        }
+
+        /* Custom Button Style */
+        .btn-gold {
+            @apply bg-brand-gold text-brand-dark font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out;
+        }
+        .btn-gold:hover {
+            @apply bg-brand-gold-dark shadow-xl transform -translate-y-1;
+        }
+        
+        .btn-outline {
+             @apply border-2 border-brand-gold text-brand-gold font-bold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 ease-in-out;
+        }
+        .btn-outline:hover {
+            @apply bg-brand-gold text-brand-dark shadow-xl transform -translate-y-1;
+        }
+
+        /* Portfolio Card Hover Effect */
+        .portfolio-card {
+            @apply bg-gray-900 rounded-lg overflow-hidden shadow-lg transition-all duration-300;
+        }
+        .portfolio-card:hover {
+            @apply transform -translate-y-2 shadow-2xl shadow-brand-gold/20;
+        }
+        
+        /* Testimonial Card */
+        .testimonial-card {
+            @apply bg-gray-900 p-6 rounded-lg border-l-4 border-brand-gold shadow-lg;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    
+    <script>
+        // Configure Tailwind CSS
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-gold': '#DAA520',
+                        'brand-gold-dark': '#B8860B',
+                        'brand-dark': '#111111',
+                        'brand-light': '#F5F5F5',
+                        'brand-gray': '#2d2d2d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-dark text-brand-light antialiased">
+
+    <!-- Header & Navigation --><header class="bg-brand-dark/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo/Brand Name --><a href="#" onclick="showPage('page-home')">
+                <img src="ZION LOGO.png" alt="Zion da'mediaguy Logo" class="h-10 w-auto">
+            </a>
+            
+            <!-- Desktop Navigation --><div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                <a href="#" class="nav-link text-lg font-medium" data-page="page-home" onclick="showPage('page-home')">Home</a>
+                <a href="#" class="nav-link text-lg font-medium" data-page="page-about" onclick="showPage('page-about')">About</a>
+                <a href="#" class="nav-link text-lg font-medium" data-page="page-services" onclick="showPage('page-services')">Services</a>
+                <a href="#" class="nav-link text-lg font-medium" data-page="page-portfolio" onclick="showPage('page-portfolio')">Portfolio</a>
+                <a href="#" class="nav-link text-lg font-medium" data-page="page-testimonials" onclick="showPage('page-testimonials')">Testimonials</a>
+                <a href="#" class="nav-link text-lg font-medium" data-page="page-contact" onclick="showPage('page-contact')">Contact</a>
+                <a href="https://wa.me/2340000000000?text=Hello%20Zion!%20I'm%20interested%20in%20your%20media%20services." target="_blank" class="btn-gold text-sm px-5 py-2">Hire Me</a>
+            </div>
+            
+            <!-- Mobile Menu Button --><button id="mobile-menu-button" class="md:hidden text-2xl text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu (Dropdown) --><div id="mobile-menu" class="hidden md:hidden bg-brand-dark shadow-xl">
+            <a href="#" class="nav-link block text-center text-lg py-3 px-6" data-page="page-home" onclick="showPage('page-home')">Home</a>
+            <a href="#" class="nav-link block text-center text-lg py-3 px-6" data-page="page-about" onclick="showPage('page-about')">About</a>
+            <a href="#" class="nav-link block text-center text-lg py-3 px-6" data-page="page-services" onclick="showPage('page-services')">Services</a>
+            <a href="#" class="nav-link block text-center text-lg py-3 px-6" data-page="page-portfolio" onclick="showPage('page-portfolio')">Portfolio</a>
+            <a href="#" class="nav-link block text-center text-lg py-3 px-6" data-page="page-testimonials" onclick="showPage('page-testimonials')">Testimonials</a>
+            <a href="#" class="nav-link block text-center text-lg py-3 px-6" data-page="page-contact" onclick="showPage('page-contact')">Contact</a>
+            <a href="https://wa.me/2340000000000?text=Hello%20Zion!%20I'm%20interested%20in%20your%20media%20services." target="_blank" class="block text-center bg-brand-gold text-brand-dark font-bold py-3 px-6 m-4 rounded-lg">Hire Me</a>
+        </div>
+    </header>
+
+    <!-- Main Content Area --><main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- ===== HOME PAGE ===== --><section id="page-home" class="page-section">
+            <!-- Hero Section --><div class="h-[70vh] flex flex-col items-center justify-center text-center rounded-lg -mt-12 md:-mt-20 py-12" style="background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.9)), url('https://placehold.co/1600x900/111/DAA520?text=Visual+Storytelling'); background-size: cover; background-position: center;">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-tight mb-6">
+                    Bringing <span class="text-brand-gold">ideas to life</span> through<br> creative media excellence.
+                </h1>
+                <p class="text-lg md:text-xl text-brand-light max-w-2xl mb-8">
+                    I'm Zion, a creative media specialist based in Nigeria, helping brands and organizations tell their stories with passion and precision.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#" class="btn-gold" onclick="showPage('page-contact')">Let's Talk</a>
+                    <a href="#" class="btn-outline" onclick="showPage('page-portfolio')">See My Work</a>
+                </div>
+            </div>
+
+            <!-- Intro Section --><div class="py-20 text-center max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Visual Storytelling that Connects and Inspires</h2>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    My passion is transforming concepts into compelling visuals. Whether it's a stunning graphic, a cinematic video, or a flawless livestream, I partner with you to create media that not only looks amazing but also achieves your goals. I work with individuals, global brands, churches, and NGOs to deliver excellence from Lagos, Nigeria, to the world.
+                </p>
+            </div>
+
+            <!-- Featured Projects Section --><div>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Featured Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Project 1 --><div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/2d2d2d/DAA520?text=Corporate+Branding" alt="Corporate Branding Project by Zion da'mediaguy" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Brand Identity</h3>
+                            <p class="text-gray-400 mb-4">Complete brand identity for a tech startup.</p>
+                            <a href="#" class="text-brand-gold font-medium" onclick="showPage('page-portfolio')">View Project &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Project 2 --><div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/2d2d2d/DAA520?text=Event+Videography" alt="Event Videography for Church Event by Zion da'mediaguy" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Event Videography</h3>
+                            <p class="text-gray-400 mb-4">Cinematic recap of a major church conference.</p>
+                            <a href="#" class="text-brand-gold font-medium" onclick="showPage('page-portfolio')">View Project &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Project 3 --><div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/2d2d2d/DAA520?text=Portrait+Photography" alt="Portrait Photography by Zion da'mediaguy" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Portrait Photography</h3>
+                            <p class="text-gray-400 mb-4">Professional headshots for a corporate team.</p>
+                            <a href="#" class="text-brand-gold font-medium" onclick="showPage('page-portfolio')">View Project &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT PAGE ===== --><section id="page-about" class="page-section hidden">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16">About <span class="text-brand-gold">Me</span></h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Image --><div class="md:w-1/3">
+                    <img src="Zion_da_mediaguy_enhanced.jpg" alt="Zion da'mediaguy, Creative Media Specialist" class="rounded-lg shadow-2xl w-full aspect-square object-cover object-right">
+                </div>
+                
+                <!-- Text Content --><div class="md:w-2/3">
+                    <h3 class="text-3xl font-bold text-white mb-4">My Journey</h3>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                        Hello! I'm Zion, the creative force behind "Zion da'mediaguy." My journey into media began with a simple fascination for how stories are told with pictures and sound. This curiosity grew into a passion, leading me to master the tools of graphic design, video production, and photography. Based in Nigeria, I've had the privilege of working with a diverse range of clients, from local entrepreneurs to international organizations, helping each one find their unique visual voice.
+                    </p>
+                    
+                    <h3 class="text-3xl font-bold text-white mb-4">My Mission & Process</h3>
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                        My mission is simple: to transform your ideas into high-quality, inspiring visuals that connect with your audience. I believe in a collaborative process built on communication and purpose.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-brand-gold text-2xl font-black mr-4">1.</span>
+                            <div>
+                                <h4 class="text-xl font-bold">Listen & Understand</h4>
+                                <p class="text-gray-400">We start by diving deep into your vision, goals, and audience.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-gold text-2xl font-black mr-4">2.</span>
+                            <div>
+                                <h4 class="text-xl font-bold">Create & Collaborate</h4>
+                                <p class="text-gray-400">I bring the vision to life, sharing progress and refining with your feedback.</p>
+                            </div>
+                        </li>
+                         <li class="flex items-start">
+                            <span class="text-brand-gold text-2xl font-black mr-4">3.</span>
+                            <div>
+                                <h4 class="text-xl font-bold">Deliver & Inspire</h4>
+                                <p class="text-gray-400">You receive a final product that exceeds expectations and is ready to inspire.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES PAGE ===== --><section id="page-services" class="page-section hidden">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16">My <span class="text-brand-gold">Services</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Service Card 1 --><div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
+                    <i class="fas fa-palette text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Graphic Design</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        From stunning flyers and social media designs to complete brand identity systems, I create visuals that capture attention and communicate clearly.
+                    </p>
+                    <a href="#" class="btn-outline text-sm" onclick="showPage('page-contact')">Request a Quote</a>
+                </div>
+                
+                <!-- Service Card 2 --><div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
+                    <i class="fas fa-video text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Video Production & Editing</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Engage your audience with high-quality promotional videos, short films, and dynamic coverage of church services or corporate events.
+                    </p>
+                    <a href="#" class="btn-outline text-sm" onclick="showPage('page-contact')">Book Now</a>
+                </div>
+                
+                <!-- Service Card 3 --><div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
+                    <i class="fas fa-camera text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Photography</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Professional portraits, impactful event photography, and crisp product shots that showcase you or your brand in the best possible light.
+                    </p>
+                    <a href="#" class="btn-outline text-sm" onclick="showPage('page-contact')">Book Now</a>
+                </div>
+                
+                <!-- Service Card 4 --><div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
+                    <i class="fas fa-tower-broadcast text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Livestream & Consultation</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Flawless multi-camera livestream setup for your events, services, or webinars. I also offer media consultation to help your team improve its creative output.
+                    </p>
+                    <a href="#" class="btn-outline text-sm" onclick="showPage('page-contact')">Request a Quote</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PORTFOLIO PAGE ===== --><section id="page-portfolio" class="page-section hidden">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16">Creative <span class="text-brand-gold">Portfolio</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 --><div class="portfolio-card">
+                    <img src="https://placehold.co/600x400/111/DAA520?text=NGO+Documentary" alt="NGO Documentary Video Project by Zion da'mediaguy" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">NGO Documentary</h3>
+                        <p class="text-gray-400 mb-4">Short documentary for a non-profit, highlighting their impact in the community.</p>
+                        <p class="text-sm text-gray-500 italic">"Zion captured our story perfectly. The video has been a huge help for our fundraising." - Local NGO</p>
+                    </div>
+                </div>
+                <!-- Portfolio Item 2 --><div class="portfolio-card">
+                    <img src="https://placehold.co/600x400/111/DAA520?text=Product+Photography" alt="E-commerce Product Photography by Zion da'mediaguy" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">E-commerce Product Shots</h3>
+                        <p class="text-gray-400 mb-4">Clean and professional product photography for an online fashion brand.</p>
+                    </div>
+                </div>
+                <!-- Portfolio Item 3 --><div class="portfolio-card">
+                    <img src="https://placehold.co/600x400/111/DAA520?text=Church+Conference+Branding" alt="Church Conference Branding by Zion da'mediaguy" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Conference Branding</h3>
+                        <p class="text-gray-400 mb-4">Complete visual identity (logo, banners, social media) for a large-scale church event.</p>
+                        <p class="text-sm text-gray-500 italic">"His designs gave our event a professional and inspiring look. Truly blessed by his work." - Church Media Director</p>
+                    </div>
+                </div>
+                <!-- Portfolio Item 4 --><div class="portfolio-card">
+                    <img src="https://placehold.co/600x400/111/DAA520?text=Music+Video+Edit" alt="Music Video Editing by Zion da'mediaguy" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Music Video Editing</h3>
+                        <p class="text-gray-400 mb-4">Dynamic and rhythmic editing for an upcoming gospel artist.</p>
+                    </div>
+                </div>
+                <!-- Portfolio Item 5 --><div class="portfolio-card">
+                    <img src="https://placehold.co/600x400/111/DAA520?text=Livestream+Setup" alt="Multi-camera Livestream Setup by Zion da'mediaguy" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Multi-Cam Livestream</h3>
+                        <p class="text-gray-400 mb-4">Professional livestream setup and direction for a corporate webinar.</p>
+                    </div>
+                </div>
+                <!-- Portfolio Item 6 --><div class="portfolio-card">
+                    <img src="https://placehold.co/600x400/111/DAA520?text=Personal+Portraits" alt="Personal Portrait Photoshoot by Zion da'mediaguy" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">Personal Portraits</h3>
+                        <p class="text-gray-400 mb-4">Creative and expressive portraits for a personal brand.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ===== TESTIMONIALS PAGE ===== --><section id="page-testimonials" class="page-section hidden">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-16">What <span class="text-brand-gold">Clients Say</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 --><div class="testimonial-card">
+                    <blockquote class="text-lg text-gray-300 leading-relaxed mb-4">
+                        "Zion da'mediaguy is our go-to for all our church media. His work on our livestreams and event videos has been exceptional. He's reliable, creative, and truly understands our mission."
+                    </blockquote>
+                    <p class="font-bold text-white">Pst. David O.</p>
+                    <p class="text-brand-gold text-sm">Media Director, Grace Assembly</p>
+                </div>
+                <!-- Testimonial 2 --><div class="testimonial-card">
+                    <blockquote class="text-lg text-gray-300 leading-relaxed mb-4">
+                        "The branding package Zion created for my new business was beyond my expectations. He listened to my ideas and turned them into a visual identity that I'm proud of. Highly recommended!"
+                    </blockquote>
+                    <p class="font-bold text-white">Tunde A.</p>
+                    <p class="text-brand-gold text-sm">Founder, Tunde's Kicks</p>
+                </div>
+                <!-- Testimonial 3 --><div class="testimonial-card">
+                    <blockquote class="text-lg text-gray-300 leading-relaxed mb-4">
+                        "Working with Zion was a seamless experience. He handled our NGO's promotional video with such professionalism and sensitivity. The final product was powerful and moving."
+                    </blockquote>
+                    <p class="font-bold text-white">Dr. Amina B.</p>
+                    <p class="text-brand-gold text-sm">Program Coordinator, Bright Futures NGO</p>
+                </div>
+                 <!-- Testimonial 4 --><div class="testimonial-card">
+                    <blockquote class="text-lg text-gray-300 leading-relaxed mb-4">
+                        "I needed professional portraits for my LinkedIn and personal brand. Zion made the process comfortable and the photos turned out amazing. He has a great eye for detail."
+                    </blockquote>
+                    <p class="font-bold text-white">Chioma N.</p>
+                    <p class="text-brand-gold text-sm">Corporate Professional</p>
+                </div>
+                 <!-- Testimonial 5 --><div class="testimonial-card">
+                    <blockquote class="text-lg text-gray-300 leading-relaxed mb-4">
+                        "His social media designs are always on-point. They are creative, engaging, and delivered on time. He's a key part of our online strategy."
+                    </blockquote>
+                    <p class="font-bold text-white">Seyi G.</p>
+                    <p class="text-brand-gold text-sm">Social Media Manager</p>
+                </div>
+                 <!-- Testimonial 6 --><div class="testimonial-card">
+                    <blockquote class="text-lg text-gray-300 leading-relaxed mb-4">
+                        "Top-tier video editor! Zion took raw footage from our event and created a cinematic recap that wowed our entire team. 10/10."
+                    </blockquote>
+                    <p class="font-bold text-white">Mike E.</p>
+                    <p class="text-brand-gold text-sm">Event Planner</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT PAGE ===== --><section id="page-contact" class="page-section hidden">
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-6">Let's create something <span class="text-brand-gold">amazing together.</span></h2>
+            <p class="text-center text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
+                Have a project in mind or just want to ask a question? I'm here to help. Reach out, and let's start the conversation.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-12 bg-gray-900 p-8 md:p-12 rounded-lg shadow-2xl">
+                <!-- Contact Form --><div class="md:w-2/3">
+                    <form id="contact-form">
+                        <div id="form-message" class="mb-4 hidden p-3 rounded-lg"></div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" required class="w-full bg-brand-dark border border-brand-gray text-white p-3 rounded-lg focus:border-brand-gold focus:ring-brand-gold focus:outline-none">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Your Email</label>
+                                <input type="email" id="email" name="email" required class="w-full bg-brand-dark border border-brand-gray text-white p-3 rounded-lg focus:border-brand-gold focus:ring-brand-gold focus:outline-none">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="w-full bg-brand-dark border border-brand-gray text-white p-3 rounded-lg focus:border-brand-gold focus:ring-brand-gold focus:outline-none">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full bg-brand-dark border border-brand-gray text-white p-3 rounded-lg focus:border-brand-gold focus:ring-brand-gold focus:outline-none"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn-gold w-full md:w-auto">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Contact Info --><div class="md:w-1/3">
+                    <h3 class="text-2xl font-bold text-white mb-6">Get in Touch Directly</h3>
+                    <div class="space-y-6">
+                        <!-- Email --><div class="flex items-center gap-4">
+                            <i class="fas fa-envelope text-2xl text-brand-gold w-6 text-center"></i>
+                            <div>
+                                <h4 class="text-lg font-semibold">Email</h4>
+                                <a href="mailto:zion.mediaguy@example.com" class="text-gray-300 hover:text-brand-gold transition-colors">zion.mediaguy@example.com</a>
+                            </div>
+                        </div>
+                        <!-- WhatsApp --><div class="flex items-center gap-4">
+                            <i class="fab fa-whatsapp text-2xl text-brand-gold w-6 text-center"></i>
+                            <div>
+                                <h4 class="text-lg font-semibold">WhatsApp</h4>
+                                <a href="https://wa.me/2348012345678" target="_blank" class="text-gray-300 hover:text-brand-gold transition-colors">+234 801 234 5678</a>
+                            </div>
+                        </div>
+                        <!-- Socials --><div>
+                            <h4 class="text-lg font-semibold mb-3 mt-8">Follow Me</h4>
+                            <div class="flex space-x-5">
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-brand-gold transition-colors text-2xl"><i class="fab fa-instagram"></i></a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-brand-gold transition-colors text-2xl"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-brand-gold transition-colors text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-brand-gold transition-colors text-2xl"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer --><footer class="bg-black text-gray-400 text-center py-10 mt-16 border-t border-brand-gray">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" target="_blank" class="hover:text-brand-gold transition-colors text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" class="hover:text-brand-gold transition-colors text-2xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" class="hover:text-brand-gold transition-colors text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" class="hover:text-brand-gold transition-colors text-2xl"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 Zion da’mediaguy. All rights reserved.</p>
+            <p class="text-sm mt-2">Creative Media Specialist in Lagos, Nigeria.</p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript --><script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pages = document.querySelectorAll('.page-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+
+            // --- Page Navigation Function ---
+            window.showPage = (pageId) => {
+                // Hide all pages
+                pages.forEach(page => {
+                    page.classList.add('hidden');
+                });
+                
+                // Show the target page
+                const activePage = document.getElementById(pageId);
+                if (activePage) {
+                    activePage.classList.remove('hidden');
+                }
+
+                // Update active nav link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-page') === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // Scroll to top of main content
+                document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+                
+                // Hide mobile menu after navigation
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+
+            // --- Mobile Menu Toggle ---
+            mobileMenuButton.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                if (isHidden) {
+                    mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+                } else {
+                    mobileMenuButton.innerHTML = '<i class="fas fa-times"></i>';
+                }
+            });
+
+            // --- Contact Form Submission (Mock) ---
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simulate form submission
+                formMessage.classList.remove('hidden', 'bg-red-500');
+                formMessage.classList.add('bg-green-600', 'text-white');
+                formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                
+                contactForm.reset();
+
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 5000);
+            });
+
+            // --- Initialize: Show Home Page ---
+            showPage('page-home');
+        });
+    </script>
+
+</body>
+</html>
+

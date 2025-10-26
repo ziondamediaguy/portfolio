@@ -85,6 +85,17 @@
             @apply transform -translate-y-2 shadow-2xl shadow-brand-gold/20;
         }
         
+        /* New Portfolio Tab Styles */
+        .portfolio-tab {
+            @apply py-2 px-4 font-medium text-gray-400 border-b-2 border-transparent transition-all duration-300;
+        }
+        .portfolio-tab:hover {
+            @apply text-brand-gold;
+        }
+        .portfolio-tab.active {
+            @apply text-brand-gold border-brand-gold;
+        }
+
         /* Testimonial Card */
         .testimonial-card {
             @apply bg-gray-900 p-6 rounded-lg border-l-4 border-brand-gold shadow-lg;
@@ -249,39 +260,63 @@
         <!-- ===== SERVICES PAGE ===== --><section id="page-services" class="page-section hidden">
             <h2 class="text-4xl md:text-5xl font-black text-center mb-16">My <span class="text-brand-gold">Services</span></h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Service Card 1 --><div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
                     <i class="fas fa-palette text-4xl text-brand-gold mb-6"></i>
                     <h3 class="text-3xl font-bold text-white mb-4">Graphic Design</h3>
                     <p class="text-gray-300 leading-relaxed mb-6">
-                        From stunning flyers and social media designs to complete brand identity systems, I create visuals that capture attention and communicate clearly.
+                        Flyers, social media designs, and complete brand identity systems that capture attention and communicate clearly.
                     </p>
                     <a href="#" class="btn-outline text-sm" onclick="showPage('page-contact')">Request a Quote</a>
                 </div>
                 
-                <!-- Service Card 2 --><div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
-                    <i class="fas fa-video text-4xl text-brand-gold mb-6"></i>
-                    <h3 class="text-3xl font-bold text-white mb-4">Video Production & Editing</h3>
-                    <p class="text-gray-300 leading-relaxed mb-6">
-                        Engage your audience with high-quality promotional videos, short films, and dynamic coverage of church services or corporate events.
-                    </p>
-                    <a href="#" class="btn-outline text-sm" onclick="showPage('page-contact')">Book Now</a>
-                </div>
-                
-                <!-- Service Card 3 --><div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
+                <!-- Service Card 2 -->
+                <div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
                     <i class="fas fa-camera text-4xl text-brand-gold mb-6"></i>
                     <h3 class="text-3xl font-bold text-white mb-4">Photography</h3>
                     <p class="text-gray-300 leading-relaxed mb-6">
-                        Professional portraits, impactful event photography, and crisp product shots that showcase you or your brand in the best possible light.
+                        Professional portraits, impactful event photography, and crisp product shots that showcase your brand in the best light.
                     </p>
                     <a href="#" class="btn-outline text-sm" onclick="showPage('page-contact')">Book Now</a>
                 </div>
                 
-                <!-- Service Card 4 --><div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
-                    <i class="fas fa-tower-broadcast text-4xl text-brand-gold mb-6"></i>
-                    <h3 class="text-3xl font-bold text-white mb-4">Livestream & Consultation</h3>
+                <!-- Service Card 3 -->
+                <div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
+                    <i class="fas fa-video text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Videography</h3>
                     <p class="text-gray-300 leading-relaxed mb-6">
-                        Flawless multi-camera livestream setup for your events, services, or webinars. I also offer media consultation to help your team improve its creative output.
+                        High-quality, cinematic video shooting for promotional content, short films, and dynamic event coverage.
+                    </p>
+                    <a href="#" class="btn-outline text-sm" onclick="showPage('page-contact')">Book Now</a>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
+                    <i class="fas fa-film text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Video Editing</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Turning your raw footage into a polished, engaging story for promos, documentaries, or social media.
+                    </p>
+                    <a href="#" class="btn-outline text-sm" onclick="showPage('page-contact')">Request a Quote</a>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
+                    <i class="fas fa-tower-broadcast text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Live Video Productions</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Flawless multi-camera livestream setup and production for your events, church services, or corporate webinars.
+                    </p>
+                    <a href="#" class="btn-outline text-sm" onclick="showPage('page-contact')">Request a Quote</a>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-gray-900 p-8 rounded-lg shadow-xl transition-all duration-300 hover:shadow-brand-gold/20 hover:-translate-y-1">
+                    <i class="fas fa-comments text-4xl text-brand-gold mb-6"></i>
+                    <h3 class="text-3xl font-bold text-white mb-4">Media Consultation</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Helping your church or organization's media team improve its creative output, workflow, and technical skills.
                     </p>
                     <a href="#" class="btn-outline text-sm" onclick="showPage('page-contact')">Request a Quote</a>
                 </div>
@@ -289,54 +324,121 @@
         </section>
 
         <!-- ===== PORTFOLIO PAGE ===== --><section id="page-portfolio" class="page-section hidden">
-            <h2 class="text-4xl md:text-5xl font-black text-center mb-16">Creative <span class="text-brand-gold">Portfolio</span></h2>
+            <h2 class="text-4xl md:text-5xl font-black text-center mb-12">Creative <span class="text-brand-gold">Portfolio</span></h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Portfolio Item 1 --><div class="portfolio-card">
-                    <img src="https://placehold.co/600x400/111/DAA520?text=NGO+Documentary" alt="NGO Documentary Video Project by Zion da'mediaguy" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">NGO Documentary</h3>
-                        <p class="text-gray-400 mb-4">Short documentary for a non-profit, highlighting their impact in the community.</p>
-                        <p class="text-sm text-gray-500 italic">"Zion captured our story perfectly. The video has been a huge help for our fundraising." - Local NGO</p>
+            <!-- Portfolio Category Navigation -->
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8 mb-12 border-b border-brand-gray">
+                <button class="portfolio-tab" data-category="graphic-design" onclick="showPortfolioCategory('graphic-design')">Graphic Design</button>
+                <button class="portfolio-tab" data-category="photography" onclick="showPortfolioCategory('photography')">Photography</button>
+                <button class="portfolio-tab" data-category="videography" onclick="showPortfolioCategory('videography')">Videography</button>
+                <button class="portfolio-tab" data-category="video-editing" onclick="showPortfolioCategory('video-editing')">Video Editing</button>
+                <button class="portfolio-tab" data-category="live-production" onclick="showPortfolioCategory('live-production')">Live Production</button>
+            </div>
+
+            <!-- Portfolio Grids -->
+            
+            <!-- Graphic Design Grid -->
+            <div id="portfolio-graphic-design" class="portfolio-category">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio Item 1 -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/111/DAA520?text=Church+Flyer" alt="Church Conference Branding by Zion da'mediaguy" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Conference Branding</h3>
+                            <p class="text-gray-400 mb-4">Complete visual identity (logo, banners, social media) for a large-scale church event.</p>
+                        </div>
                     </div>
-                </div>
-                <!-- Portfolio Item 2 --><div class="portfolio-card">
-                    <img src="https://placehold.co/600x400/111/DAA520?text=Product+Photography" alt="E-commerce Product Photography by Zion da'mediaguy" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">E-commerce Product Shots</h3>
-                        <p class="text-gray-400 mb-4">Clean and professional product photography for an online fashion brand.</p>
+                    <!-- Portfolio Item 2 -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/111/DAA520?text=Brand+Identity" alt="E-commerce Product Photography by Zion da'mediaguy" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">E-commerce Brand</h3>
+                            <p class="text-gray-400 mb-4">Clean and professional product photography for an online fashion brand.</p>
+                        </div>
                     </div>
-                </div>
-                <!-- Portfolio Item 3 --><div class="portfolio-card">
-                    <img src="https://placehold.co/600x400/111/DAA520?text=Church+Conference+Branding" alt="Church Conference Branding by Zion da'mediaguy" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">Conference Branding</h3>
-                        <p class="text-gray-400 mb-4">Complete visual identity (logo, banners, social media) for a large-scale church event.</p>
-                        <p class="text-sm text-gray-500 italic">"His designs gave our event a professional and inspiring look. Truly blessed by his work." - Church Media Director</p>
-                    </div>
-                </div>
-                <!-- Portfolio Item 4 --><div class="portfolio-card">
-                    <img src="https://placehold.co/600x400/111/DAA520?text=Music+Video+Edit" alt="Music Video Editing by Zion da'mediaguy" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">Music Video Editing</h3>
-                        <p class="text-gray-400 mb-4">Dynamic and rhythmic editing for an upcoming gospel artist.</p>
-                    </div>
-                </div>
-                <!-- Portfolio Item 5 --><div class="portfolio-card">
-                    <img src="https://placehold.co/600x400/111/DAA520?text=Livestream+Setup" alt="Multi-camera Livestream Setup by Zion da'mediaguy" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">Multi-Cam Livestream</h3>
-                        <p class="text-gray-400 mb-4">Professional livestream setup and direction for a corporate webinar.</p>
-                    </div>
-                </div>
-                <!-- Portfolio Item 6 --><div class="portfolio-card">
-                    <img src="https://placehold.co/600x400/111/DAA520?text=Personal+Portraits" alt="Personal Portrait Photoshoot by Zion da'mediaguy" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">Personal Portraits</h3>
-                        <p class="text-gray-400 mb-4">Creative and expressive portraits for a personal brand.</p>
+                    <!-- Portfolio Item 3 -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/111/DAA520?text=Social+Media+Design" alt="Social Media Design by Zion da'mediaguy" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Social Media Designs</h3>
+                            <p class="text-gray-400 mb-4">Engaging carousel posts for an Instagram campaign.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Photography Grid -->
+            <div id="portfolio-photography" class="portfolio-category hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio Item -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/111/DAA520?text=Personal+Portraits" alt="Personal Portrait Photoshoot by Zion da'mediaguy" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Personal Portraits</h3>
+                            <p class="text-gray-400 mb-4">Creative and expressive portraits for a personal brand.</p>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/111/DAA520?text=Event+Photography" alt="Event Photography by Zion da'mediaguy" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Event Photography</h3>
+                            <p class="text-gray-400 mb-4">Capturing candid moments at a corporate gala.</p>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/111/DAA520?text=Product+Shots" alt="Product Photography by Zion da'mediaguy" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Product Shots</h3>
+                            <p class="text-gray-400 mb-4">High-key lighting for a new skincare product line.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Videography Grid -->
+            <div id="portfolio-videography" class="portfolio-category hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio Item -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/111/DAA520?text=NGO+Documentary" alt="NGO Documentary Video Project by Zion da'mediaguy" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">NGO Documentary</h3>
+                            <p class="text-gray-400 mb-4">Short documentary for a non-profit, highlighting their impact in the community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Editing Grid -->
+            <div id="portfolio-video-editing" class="portfolio-category hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio Item -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/111/DAA520?text=Music+Video+Edit" alt="Music Video Editing by Zion da'mediaguy" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Music Video Editing</h3>
+                            <p class="text-gray-400 mb-4">Dynamic and rhythmic editing for an upcoming gospel artist.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Production Grid -->
+            <div id="portfolio-live-production" class="portfolio-category hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Portfolio Item -->
+                    <div class="portfolio-card">
+                        <img src="https://placehold.co/600x400/111/DAA520?text=Livestream+Setup" alt="Multi-camera Livestream Setup by Zion da'mediaguy" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-white mb-2">Multi-Cam Livestream</h3>
+                            <p class="text-gray-400 mb-4">Professional livestream setup and direction for a corporate webinar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
         
         <!-- ===== TESTIMONIALS PAGE ===== --><section id="page-testimonials" class="page-section hidden">
@@ -478,6 +580,35 @@
             const contactForm = document.getElementById('contact-form');
             const formMessage = document.getElementById('form-message');
 
+            // --- New Portfolio Tab ---
+            const portfolioTabs = document.querySelectorAll('.portfolio-tab');
+            const portfolioCategories = document.querySelectorAll('.portfolio-category');
+
+            window.showPortfolioCategory = (category) => {
+                // Hide all categories
+                portfolioCategories.forEach(cat => {
+                    cat.classList.add('hidden');
+                });
+
+                // Deactivate all tabs
+                portfolioTabs.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+
+                // Show the target category
+                const activeCategory = document.getElementById(`portfolio-${category}`);
+                if (activeCategory) {
+                    activeCategory.classList.remove('hidden');
+                }
+
+                // Activate the target tab
+                const activeTab = document.querySelector(`.portfolio-tab[data-category="${category}"]`);
+                if (activeTab) {
+                    activeTab.classList.add('active');
+                }
+            }
+
+
             // --- Page Navigation Function ---
             window.showPage = (pageId) => {
                 // Hide all pages
@@ -489,6 +620,11 @@
                 const activePage = document.getElementById(pageId);
                 if (activePage) {
                     activePage.classList.remove('hidden');
+                }
+
+                // If navigating to portfolio, reset to first tab
+                if (pageId === 'page-portfolio') {
+                    showPortfolioCategory('graphic-design');
                 }
 
                 // Update active nav link
